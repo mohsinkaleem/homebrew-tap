@@ -9,32 +9,38 @@ class Dirgo < Formula
   license "MIT"
 
   on_macos do
-    on_intel do
+    if Hardware::CPU.intel?
       url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_darwin_amd64.tar.gz"
-      sha256 "44e33412903ec86ac84519b74c2b75cd30d2478049a274ab40c5a6c1a7b9ea5a"
+      sha256 "aa38abcd808c90174fe70ea6c7a26c4ac47e2f25d8c562657ddbcee139d06812"
+
+      define_method(:install) do
+        bin.install "dirgo"
+      end
     end
-    on_arm do
+    if Hardware::CPU.arm?
       url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_darwin_arm64.tar.gz"
-      sha256 "313f9e22d48862d9dd572dcb13265ad83d89f018802da17bc26e7d78b4e2f0fc"
+      sha256 "975aa37129ba655f8b8081d5cdb33687ca8125ee2176e52d644824c3812c9290"
+
+      define_method(:install) do
+        bin.install "dirgo"
+      end
     end
   end
 
   on_linux do
-    on_intel do
+    if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
       url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_linux_amd64.tar.gz"
-      sha256 "a618e13a5fa3b62d1454f70fc3d46cee8b4d7e5eebf3fc3641cab86db35449e5"
+      sha256 "92a709689c1a3b09a943a0a85a8e0956002d2f60a17b5eeb53ff93f3decacfb2"
+      define_method(:install) do
+        bin.install "dirgo"
+      end
     end
-    on_arm do
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
       url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_linux_arm64.tar.gz"
-      sha256 "a094a99585ca0888db0449bed71884ab3b412dfaae35ddbd007b16a30c074e44"
+      sha256 "84fa085e3732cdfd645eeda909f8085586a8e4f8594c594a76f1df6e303d8dae"
+      define_method(:install) do
+        bin.install "dirgo"
+      end
     end
-  end
-
-  def install
-    bin.install "dirgo"
-  end
-
-  test do
-    assert_match "dirgo", shell_output("#{bin}/dirgo --version")
   end
 end
