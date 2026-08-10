@@ -5,21 +5,21 @@
 class Dirgo < Formula
   desc "Fast, interactive terminal directory analyzer"
   homepage "https://github.com/mohsinkaleem/dirgo"
-  version "1.1.0"
+  version "1.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_darwin_amd64.tar.gz"
-      sha256 "aa38abcd808c90174fe70ea6c7a26c4ac47e2f25d8c562657ddbcee139d06812"
+      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.2.0/dirgo_1.2.0_darwin_amd64.tar.gz"
+      sha256 "25e9bce6db946fe843acbe1ede5e0901306211d00992962c6586838177303416"
 
       define_method(:install) do
         bin.install "dirgo"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_darwin_arm64.tar.gz"
-      sha256 "975aa37129ba655f8b8081d5cdb33687ca8125ee2176e52d644824c3812c9290"
+      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.2.0/dirgo_1.2.0_darwin_arm64.tar.gz"
+      sha256 "53b59b67543aa9585ef92d67148ed1c381c4f0c27a58dcea88ecfc87f0968f8a"
 
       define_method(:install) do
         bin.install "dirgo"
@@ -29,15 +29,15 @@ class Dirgo < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_linux_amd64.tar.gz"
-      sha256 "92a709689c1a3b09a943a0a85a8e0956002d2f60a17b5eeb53ff93f3decacfb2"
+      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.2.0/dirgo_1.2.0_linux_amd64.tar.gz"
+      sha256 "9506240aaae15dc874975eba320710c53ee39a59b147e2abeae5bbac804fe0bd"
       define_method(:install) do
         bin.install "dirgo"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.1.0/dirgo_1.1.0_linux_arm64.tar.gz"
-      sha256 "84fa085e3732cdfd645eeda909f8085586a8e4f8594c594a76f1df6e303d8dae"
+      url "https://github.com/mohsinkaleem/dirgo/releases/download/v1.2.0/dirgo_1.2.0_linux_arm64.tar.gz"
+      sha256 "2ff9973cb7459a4c9b20dc8b3249b16c4d52fea971ed2d587dbbaf54ab3dc08d"
       define_method(:install) do
         bin.install "dirgo"
       end
