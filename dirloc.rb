@@ -5,21 +5,21 @@
 class Dirloc < Formula
   desc "A fast CLI tool that counts lines of code and reports top files/directories by size"
   homepage "https://github.com/mohsinkaleem/dirloc"
-  version "0.1.0"
+  version "0.2.0"
   license "MIT"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.1.0/dirloc_0.1.0_darwin_amd64.tar.gz"
-      sha256 "f1ddec1048c58058581c0fee97b54d69653574d083d4edab30a57a2c7e989528"
+      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.2.0/dirloc_0.2.0_darwin_amd64.tar.gz"
+      sha256 "82dd8d08ae5554cc5e9b7a65d498c8d088e537506e97dcd98c7147c1e771a594"
 
       define_method(:install) do
         bin.install "dirloc"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.1.0/dirloc_0.1.0_darwin_arm64.tar.gz"
-      sha256 "7ed3f1d1c978649553baf0f5226b7e4d615ba1e283373ac2ab7803ba5ac4567c"
+      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.2.0/dirloc_0.2.0_darwin_arm64.tar.gz"
+      sha256 "c22cbd05249a5403fa6021a983a1b7cb4144d3652bba50eafd9bec7f9d92b204"
 
       define_method(:install) do
         bin.install "dirloc"
@@ -29,15 +29,15 @@ class Dirloc < Formula
 
   on_linux do
     if Hardware::CPU.intel? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.1.0/dirloc_0.1.0_linux_amd64.tar.gz"
-      sha256 "824952349c632d43450e2d57a37b6554cacb9be0e6899d1b370b3af2f5bee2d4"
+      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.2.0/dirloc_0.2.0_linux_amd64.tar.gz"
+      sha256 "bbebfb6ea44e045a5b3d2e87e858eddc1e677bc757628c91379682560719bfaa"
       define_method(:install) do
         bin.install "dirloc"
       end
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.1.0/dirloc_0.1.0_linux_arm64.tar.gz"
-      sha256 "668870ee8d74789ef1977433eb1f7cd518d23dd5cfc639c57271ec31ca9f8f0e"
+      url "https://github.com/mohsinkaleem/dirloc/releases/download/v0.2.0/dirloc_0.2.0_linux_arm64.tar.gz"
+      sha256 "93416c76feda66c1fc23cd02fc7de230b27b8a838bc47897544fe970c5da379f"
       define_method(:install) do
         bin.install "dirloc"
       end
